@@ -1,0 +1,66 @@
+{
+    "name": "app-src",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "/crm",
+    "dependencies": {
+        "@adserve/adserve-react-components": "1.0.316",
+        "@testing-library/jest-dom": "5.11.10",
+        "@testing-library/react": "11.2.6",
+        "@testing-library/user-event": "12.8.3",
+        "axios": "0.21.1",
+        "google-libphonenumber": "3.2.16",
+        "is-hotkey": "0.2.0",
+        "is-url": "1.2.4",
+        "prop-types": "15.7.2",
+        "react-dom": "17.0.1",
+        "react-router-dom": "5.2.0",
+        "react-scripts": "5.0.0",
+        "slate": "0.59.0",
+        "slate-history": "0.59.0",
+        "slate-react": "0.59.0",
+        "typeface-roboto": "1.1.13"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "nginx-unix": "export PORT=3002 && react-scripts start",
+        "nginx-win64": "set PORT=3002 && react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "prettier": "prettier -w src/"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.17.0",
+        "@babel/preset-react": "^7.16.7",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-config-standard-react": "^11.0.1",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.7.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-promise": "^4.3.1",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-standard": "^4.1.0",
+        "eslint-plugin-unused-imports": "^1.1.5",
+        "prettier": "^2.6.2"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": "@babel/eslint-parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:react/recommended"
+    ],
+    "plugins": [],
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "browser": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "legacyDecorators": true,
+            "jsx": true,
+            "modules": true
+        },
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
+         }
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "space-before-function-paren": 0,
+        "react/prop-types": 0,
+        "react/jsx-handler-names": 0,
+        "react/jsx-fragments": 0,
+        "react/no-unused-prop-types": 0,
+        "react/no-unknown-property": "warn",
+        "prefer-const": "warn",
+        "react/display-name": "warn",
+        "array-callback-return": "warn",
+        "spaced-comment": "warn",
+        "no-prototype-builtins": "warn",
+        "eqeqeq": "warn",
+        "no-useless-return": "warn",
+        "no-unused-vars": "warn",
+        "no-unneeded-ternary": "warn",
+        "import/export": 0,
+        "no-alert": "warn",
+        "no-console": "warn",
+        "react/jsx-uses-react": 1,
+        "react/jsx-no-bind": "off",
+        "react/jsx-key": "warn",
+        "no-duplicate-imports": "warn",
+        "no-unsafe-optional-chaining": "warn",
+        "indent": ["warn", 4, { "SwitchCase": 1 }],
+        "prettier/prettier": [
+          "warn",
+          {
+            "endOfLine": "auto"
+          }
+        ]
+    }
+}
