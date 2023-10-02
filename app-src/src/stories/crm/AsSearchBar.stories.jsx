@@ -3,16 +3,16 @@ import {AsSearchBar} from '@adserve/adserve-react-components';
 import { action } from '@storybook/addon-actions';
 
 export default{
-    title: 'CRM/Search',
+    title: 'AdserveCRM/Search',
     component: AsSearchBar,
 
     parameters: {
-        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
+        // Optional parameter to center the component in the Canvas. 
         layout: 'centered',
     },
 
     tags: ['autodocs'],
-
+    // Docs code
     argTypes: {
         id:{
             description: 'Id of search bar',
@@ -57,7 +57,7 @@ export default{
             }
         },
         currentSearchTerm: {
-            description: 'This parameter determines what will be in the search field when the page is rendered', 
+            description: 'This parameter determines what will be in the search field when the component is rendered', 
             table: {
                 type: { summary: 'string' },
                 defaultValue: { summary: '' },
@@ -67,17 +67,28 @@ export default{
             description: 'A function that will be called if the search text is changed (the number of characters must be greater than "minSearchLength")', 
             table: {
                 type: { summary: 'func.isRequired' },
-                defaultValue: { summary: '' },
+                defaultValue: { summary: '-' },
+            },
+            control: {
+                type: null, 
+            },
+        },
+        containerStyle: {
+            description: 'CSS styles for container of search bar', 
+            table: {
+                type: { summary: 'object' },
+                defaultValue: { summary: '-' },
             },
         },
     },
 }
 
+//CRM sample code
 const Template = (arg) =>  <AsSearchBar {...arg}/>
 
-export const Default = Template.bind({});
+export const CrmSearch = Template.bind({});
 
-Default.args = {
+CrmSearch.args = {
     id: 'accountSearch',
     placeholder: 'Search Accounts...',
     width: 395,
@@ -86,6 +97,7 @@ Default.args = {
     maxLength: 25,
     currentSearchTerm: '',
     onSearchUpdate: action('onSearchUpdate-action'),
+    containerStyle: { border: '0px solid black' }
 }
 
 
