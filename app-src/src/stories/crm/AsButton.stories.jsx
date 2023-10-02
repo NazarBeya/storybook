@@ -1,7 +1,6 @@
 import React from 'react';
 import {AsButton} from '@adserve/adserve-react-components';
 import { action } from '@storybook/addon-actions';
-import { Select } from '@storybook/addon-controls';
 
 
 export default{
