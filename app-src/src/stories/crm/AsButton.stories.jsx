@@ -11,7 +11,7 @@ export default{
         // Optional parameter to center the component in the Canvas. 
         layout: 'centered',
     },
-
+    // Docs code
     tags: ['autodocs'],
     argTypes: {
         type: {
@@ -23,6 +23,7 @@ export default{
           control: { type: 'select',},
           options: ['button', 'submit', 'reset', 'image', 'menu'],
         },
+
         disabled: {
           description: 'Whether the button is disabled',
           table: {
@@ -33,6 +34,7 @@ export default{
             type: 'boolean',
           },
         },
+
         useSecondaryStyle: {
           description: 'Whether to use secondary button style',
           table: {
@@ -43,6 +45,7 @@ export default{
             type: 'boolean',
           },
         },
+
         useTertiaryStyle: {
           description: 'Whether to use tertiary button style',
           table: {
@@ -53,6 +56,7 @@ export default{
             type: 'boolean',
           },
         },
+
         handleClick: {
           description: 'Function to be called when the button is clicked',
           table: {
@@ -63,6 +67,7 @@ export default{
             type: null, 
           },
         },
+
         dataId: {
           description: 'Data ID for the button',
           table: {
@@ -73,6 +78,7 @@ export default{
             type: 'text',
           },
         },
+
         hoverStyle: {
           description: 'Style to apply on hover',
           table: {
@@ -83,6 +89,7 @@ export default{
             type: 'object',
           },
         },
+
         children:{
             name: 'label',
             description: 'Button text',
@@ -91,16 +98,17 @@ export default{
                 defaultValue: { summary: '-' },
             }
         },     
-      },
-      args:{
+    },
+
+    args:{
         handleClick: action('handleClick-action'),
-      },
+    },
 }
 
 const Template = (arg) =>  <AsButton {...arg}/>
 
+//CRM sample code
 export const CreateNew = Template.bind({});
-
 CreateNew.args = {
     type: 'button',
     disabled: false,
@@ -112,6 +120,7 @@ CreateNew.args = {
     children : 'CreateNew'
 }
 
+//Tertiary sample code
 export const TertiaryButton = Template.bind({});
 TertiaryButton.args = {
   type: 'button',
@@ -125,6 +134,7 @@ TertiaryButton.args = {
   children : 'TertiaryButton'
 };
 
+//Secondary sample code
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
   type: 'button',
