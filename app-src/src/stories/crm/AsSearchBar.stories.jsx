@@ -97,7 +97,20 @@ CrmSearch.args = {
     maxLength: 25,
     currentSearchTerm: '',
     onSearchUpdate: action('onSearchUpdate-action'),
-    containerStyle: { border: '0px solid black' }
+}
+
+export const ExampleSearch = Template.bind({});
+
+ExampleSearch.args = {
+    id: 'accountSearch',
+    placeholder: 'Search Me...',
+    width: 600,
+    height: 68,
+    minSearchLength: 4,
+    maxLength: 50,
+    currentSearchTerm: 'What If',
+    onSearchUpdate: action('onSearchUpdate-action'),
+    containerStyle: { border: '3px solid black' }
 }
 
 
