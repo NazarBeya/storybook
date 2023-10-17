@@ -2,12 +2,18 @@ import React from 'react';
 import { AsTab, AsTabContainer } from '@adserve/adserve-react-components';
 import { action } from '@storybook/addon-actions'; 
 
-var globalTabsList = ['OneGlobal', 'TwoGlobal']
-
 export default {
     title: 'AdserveCRM/TabContainer', 
     component: AsTabContainer, 
-
+    render : (
+        (args) => {
+            const tabs = args.tabsList.map((title) => <AsTab title={title} />)
+            return (
+                <AsTabContainer {...args}>
+                    {tabs}
+                </AsTabContainer>);
+        }
+    ), 
     parameters: {
         // Optional parameter to center the component in the Canvas. 
         layout: 'centered',
@@ -18,7 +24,7 @@ export default {
     argTypes: {
         tabElementStyle: {
             description: 'Style for tab elements',
-            control: 'object',
+            control: {type: 'object'},
             table: {
                 type: { summary: 'object' },
             },
@@ -59,10 +65,7 @@ export default {
         children: {
             name: 'TabsObjects',
             description: 'Tab content elements (prop title is label of tab)',
-            control: {
-                type: 'array',
-                separator: ',',
-            },
+            control: {type: 'array'},
             table: {
                 type: {
                     summary: 'Array of AsTab components',
@@ -114,6 +117,7 @@ const TabContainerTemplate = (args) => <AsTabContainer {...args} />;
 
 export const TabContainer = TabContainerTemplate.bind({});
 TabContainer.args = {
+    tabsList: ['OneGlobal', 'TwoGlobal'],
     tabElementStyle: {}, 
     tabTextStyle: {}, 
     activeTabTextStyle: {}, 
@@ -133,26 +137,54 @@ TabContainer.args = {
 };
 
 
-export const ExampleContainer = TabContainerTemplate.bind({});
-ExampleContainer.args = {
-    tabElementStyle: {}, 
-    tabTextStyle: { fontSize: '15px' }, 
-    activeTabTextStyle: {
-        fontSize: '20px',
-        textDecoration: 'underline' 
-    }, 
-    tabPanelStyle: {}, 
-    // children: [
-    //     <AsTab title='Tab1' />,
-    //     <AsTab title='Tab2' />,
-    //     <AsTab title='Tab3' />,
-    // ],
-    onTabClick: (tabIndex) => {
-        const tabNames = ExampleContainer.args.children.map((child) => child.props.title);
-        action(`Tab Clicked: ${tabNames[tabIndex]}, TabIndex`)(tabIndex);
-    },
-    initalTab: 0, 
-    flexTabsDivStyle: {}, 
-    tabsList: globalTabsList, 
-    children: globalTabsList.map((title) => <AsTab title={title} />),
-};
+// export const ExampleContainer = TabContainerTemplate.bind({});
+// ExampleContainer.args = {
+//     tabsList: ['OneGlobal', 'TwoGlobal'],
+//     tabElementStyle: {}, 
+//     tabTextStyle: { fontSize: '15px' }, 
+//     activeTabTextStyle: {
+//         fontSize: '20px',
+//         textDecoration: 'underline' 
+//     }, 
+//     tabPanelStyle: {}, 
+//     // children: [
+//     //     <AsTab title='Tab1' />,
+//     //     <AsTab title='Tab2' />,
+//     //     <AsTab title='Tab3' />,
+//     // ],
+//     onTabClick: (tabIndex) => {
+//         const tabNames = ExampleContainer.args.children.map((child) => child.props.title);
+//         action(`Tab Clicked: ${tabNames[tabIndex]}, TabIndex`)(tabIndex);
+//     },
+//     initalTab: 0, 
+//     flexTabsDivStyle: {}, 
+ 
+//     children: [],
+// };
+
+export const ExampleContainer = {
+    args:{
+        tabsList: ['OneGlobal', 'TwoGlobal'],
+        tabElementStyle: {}, 
+        tabTextStyle: { fontSize: '15px' }, 
+        activeTabTextStyle: {
+            fontSize: '20px',
+            textDecoration: 'underline' 
+        }, 
+        tabPanelStyle: {}, 
+        // children: [
+        //     <AsTab title='Tab1' />,
+        //     <AsTab title='Tab2' />,
+        //     <AsTab title='Tab3' />,
+        // ],
+        onTabClick: (tabIndex) => {
+            const tabNames = ExampleContainer.args.children.map((child) => child.props.title);
+            action(`Tab Clicked: ${tabNames[tabIndex]}, TabIndex`)(tabIndex);
+        },
+        initalTab: 0, 
+        flexTabsDivStyle: {}, 
+    
+        children: [],
+    }
+}
+

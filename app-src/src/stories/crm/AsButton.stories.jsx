@@ -15,79 +15,79 @@ export default{
     tags: ['autodocs'],
     argTypes: {
         type: {
-          description: 'Type of button',
-          table: {
-            type: { summary: 'string' },
-            defaultValue: { summary: 'button' },
-          },
-          control: { type: 'select',},
-          options: ['button', 'submit', 'reset', 'image', 'menu'],
+            description: 'Type of button',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: 'button' },
+            },
+            control: { type: 'select',},
+            options: ['button', 'submit', 'reset', 'image', 'menu'],
         },
 
         disabled: {
-          description: 'Whether the button is disabled',
-          table: {
-            type: { summary: 'boolean' },
-            defaultValue: { summary: false },
-          },
-          control: {
+            description: 'Whether the button is disabled',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: false },
+            },
+            control: {
             type: 'boolean',
-          },
+            },
         },
 
         useSecondaryStyle: {
-          description: 'Whether to use secondary button style',
-          table: {
-            type: { summary: 'boolean' },
-            defaultValue: { summary: false },
-          },
-          control: {
+            description: 'Whether to use secondary button style',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: false },
+            },
+            control: {
             type: 'boolean',
-          },
+            },
         },
 
         useTertiaryStyle: {
-          description: 'Whether to use tertiary button style',
-          table: {
-            type: { summary: 'boolean' },
-            defaultValue: { summary: false },
-          },
-          control: {
+            description: 'Whether to use tertiary button style',
+            table: {
+                type: { summary: 'boolean' },
+                defaultValue: { summary: false },
+            },
+            control: {
             type: 'boolean',
-          },
+            },
         },
 
         handleClick: {
-          description: 'Function to be called when the button is clicked',
-          table: {
-            type: { summary: 'function' },
-            defaultValue: { summary: null },
-          },
-          control: {
+            description: 'Function to be called when the button is clicked',
+            table: {
+                type: { summary: 'function' },
+                defaultValue: { summary: null },
+            },
+            control: {
             type: null, 
-          },
+            },
         },
 
         dataId: {
-          description: 'Data ID for the button',
-          table: {
-            type: { summary: 'string' },
-            defaultValue: { summary: '' },
-          },
-          control: {
+            description: 'Data ID for the button',
+            table: {
+                type: { summary: 'string' },
+                defaultValue: { summary: '' },
+            },
+            control: {
             type: 'text',
-          },
+            },
         },
 
         hoverStyle: {
-          description: 'Style to apply on hover',
-          table: {
-            type: { summary: 'object' },
-            defaultValue: { summary: null },
-          },
-          control: {
+            description: 'Style to apply on hover',
+            table: {
+                type: { summary: 'object' },
+                defaultValue: { summary: null },
+            },
+            control: {
             type: 'object',
-          },
+            },
         },
 
         children:{
@@ -123,29 +123,29 @@ CreateNew.args = {
 //Tertiary sample code
 export const TertiaryButton = Template.bind({});
 TertiaryButton.args = {
-  type: 'button',
-  disabled: false,
-  useSecondaryStyle: false,
-  useTertiaryStyle: true,
-  dataId: 'tertiaryButtonDataId',
-  hoverStyle: {
-    backgroundColor: '#ff0000', 
-  },
-  children : 'TertiaryButton'
+    type: 'button',
+    disabled: false,
+    useSecondaryStyle: false,
+    useTertiaryStyle: true,
+    dataId: 'tertiaryButtonDataId',
+    hoverStyle: {
+        backgroundColor: '#ff0000', 
+    },
+    children : 'TertiaryButton'
 };
 
 //Secondary sample code
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
-  type: 'button',
-  disabled: false,
-  useSecondaryStyle: true,
-  useTertiaryStyle: false,
-  dataId: 'secondaryButtonDataId',
-  hoverStyle: {
-    backgroundColor: '#00ff00', 
-  },
-  children : 'SecondaryButton'
+    type: 'button',
+    disabled: false,
+    useSecondaryStyle: true,
+    useTertiaryStyle: false,
+    dataId: 'secondaryButtonDataId',
+    hoverStyle: {
+        backgroundColor: '#00ff00', 
+    },
+    children : 'SecondaryButton'
 };
 
 
